@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Amigo Secreto</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="main-content">
+      <div class="video-wrapper">
+        <video playsinline autoplay muted loop>
+          <source src="assets/friends1.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <header class="header-banner">
+        <h1 class="main-title">Generador de Amigo Secreto</h1>
+        <img src="assets/Logo-b-1.svg" alt="Imagen de un grupo de amigos" />
+      </header>
+
+      <section class="input-section">
+        <h2 class="section-title">
+          Digite el nombre de las personas que van a participar...
+        </h2>
+
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="amigo"
+            class="input-name"
+            placeholder="Escribe un nombre..."
+          />
+          <button id="addButton">Añadir</button>
+        </div>
+        <p id="message" class="message"></p>
+
+        <ul id="listaAmigos" class="name-list" role="list"></ul>
+
+        <div class="button-container">
+          <button id="drawButton" disabled>Sortear Amigo</button>
+          <button id="resetButton">Reiniciar</button>
+        </div>
+
+        <p id="drawResult" class="draw-result"></p>
+      </section>
+
+      <footer>
+        <img
+          src="assets/footer-3.svg"
+          alt="Imagen de una mujer"
+        />
+        <p>
+          Desarrollado por <br />
+          Laouns &copy 2025
+        </p>
+      </footer>
+    </main>
+    <!-- MODAL DE INSTRUCCIONES -->
+    <div id="instructionsModal" class="modal">
+      <div class="modal-content">
+        <h2>📜 Instrucciones para jugar</h2>
+        <br />
+        <ul>
+          <li>✅ No se puede ingresar el mismo nombre 2 veces.</li>
+          <li>✅ Deben jugar al menos 4 personas.</li>
+          <li>✅ Siempre debe haber un número par de participantes.</li>
+          <li>
+            ✅ Al sortear, el nombre del amigo secreto aparecerá en pantalla por 3
+            segundos.
+          </li>
+          <li>
+            ✅ Para mantener el amigo secreto "anónimo", cada persona
+            debe hacer click en Sortear sola.
+          </li>
+        </ul>
+        <button id="closeModal">¡Entendido!</button>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

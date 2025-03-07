@@ -1,0 +1,292 @@
+:root {
+    --color-primary: #002033;
+    /* Fondo */
+    --color-secondary: #ffffff;
+    /* Sección principal */
+    --color-button: #2525a8;
+    /* Botón sorteo */
+    --color-button-hover: #3c46d3;
+    /* Hover sorteo */
+    --color-text-button: #ffffff;
+    /* Texto botones */
+    --color-text: #ffffff;
+    /* Texto general */
+    --color-text-subtle: #6269bcad;
+    /* Textos suaves */
+    --color-background-li: #9be2e12c;
+    /* Fondo de li */
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+/* Video de fondo */
+.video-wrapper {
+    width: 100%;
+    height: 280px;
+    position: relative;
+}
+
+video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner */
+.header-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 64px;
+    gap: 20px;
+    text-align: center;
+    position: absolute;
+}
+
+.header-banner img {
+    width: 200px;
+}
+
+/* Sección de entrada */
+.input-section {
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Contenedor de entrada */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px 0;
+}
+
+.input-name {
+    width: 75%;
+    padding: 10px;
+    padding-left: 24px;
+    border: 1px solid var(--color-text-subtle);
+    border-radius: 21px 0 0 21px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: var(--color-text-subtle);
+}
+
+button {
+    padding: 10px 21px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Botón añadir */
+#addButton {
+    background-color: var(--color-button);
+    color: var(--color-text-button);
+    border-radius: 0 21px 21px 0;
+}
+
+#addButton:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Mensaje de error */
+.message {
+    color: rgb(222, 16, 16);
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Lista de nombres */
+.name-list {
+    list-style: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.name-list li {
+    background: var(--color-background-li);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Botón de sorteo y reset */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px;
+}
+
+#drawButton,
+#resetButton {
+    background-color: var(--color-button);
+    color: var(--color-text-button);
+    padding: 10px 20px;
+    border-radius: 21px;
+}
+
+#drawButton:hover,
+#resetButton:hover {
+    background-color: var(--color-button-hover);
+}
+
+#drawButton:disabled {
+    background-color: var(--color-text-subtle);
+    cursor: not-allowed;
+}
+
+/* Resultado */
+.draw-result {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-button-hover);
+    margin: 10px;
+    text-align: center;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.816);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.modal-content {
+    background: var(--color-secondary);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 50%;
+    max-width: 500px;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content li {
+    text-align: left;
+    margin: 15px 0;
+    line-height: 190%;
+}
+
+button#closeModal {
+    background-color: var(--color-button-hover);
+    color: var(--color-text-button);
+    padding: 16px 24px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Mostrar el modal cuando se active */
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    color: var(--color-text);
+    display: flex;
+    gap: 26px;
+    text-align: left;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    line-height: 27px;
+}
+
+footer img {
+    width: 80px;
+}
+
+@media (max-width: 600px) {
+    .header-banner {
+        padding: 34px;
+        gap: 15px;
+    }
+
+    .header-banner img {
+        width: 150px;
+    }
+
+    .video-wrapper {
+        height: 200px;
+    }
+
+}

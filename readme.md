@@ -39,12 +39,12 @@ Para ejecutar este proyecto, tienes dos opciones:
 
 ### 1️⃣ Clonar el repositorio  
 ```bash
- git clone <URL>
+ [git clone <URL>](https://github.com/Naos-L/amigo-secreto.git)
 ```
 Luego, abre el archivo **index.html** en tu navegador.  
 
 ### 2️⃣ Abrir la versión en línea  
-Si prefieres probar la aplicación sin necesidad de clonar el repositorio, puedes abrir el siguiente enlace: **[GitHub Pages](URL)**  
+Si prefieres probar la aplicación sin necesidad de clonar el repositorio, puedes abrir el siguiente enlace: **[[GitHub Pages](URL)](https://naos-l.github.io/amigo-secreto/)**  
 
 ## 🤝 Contribuciones  
 Si deseas mejorar este proyecto, ¡las contribuciones son bienvenidas! Puedes enviar un **pull request** con mejoras o correcciones.  
